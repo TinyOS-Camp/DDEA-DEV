@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "None", "ReadingType": "double"}, "Path": "/WattStopper/WS86002/RELAY17", "Description": "214 FOOD SERVICE AREA", "uuid": "24e9821a-0f33-58c3-9828-c1b4c92892a8", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}, "PointName": "RELAY17"}}]

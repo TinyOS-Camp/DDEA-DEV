@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "103773552", "ReadingType": "double"}, "Path": "/Siemens/SDH.PXCM-11/SDH.FIRE_ALARM", "uuid": "1bc8cd15-3ce0-5f3c-8f05-96e984817444", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}}}]

@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "F", "ReadingType": "double"}, "Path": "/Siemens/SDH.PXCM-04/SDH/CHW2/CWRT", "Description": "CW RETURN TEMP", "uuid": "f30c8af2-d2c3-5ab0-830a-87db19174d0b", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}, "PointName": "SDH.CHW2_CWRT"}}]

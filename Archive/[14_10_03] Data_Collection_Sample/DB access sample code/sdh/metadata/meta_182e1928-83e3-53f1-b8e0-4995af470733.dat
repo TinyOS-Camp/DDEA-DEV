@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "103182080", "ReadingType": "double"}, "Path": "/Siemens/SDH.PXCM-11/SDH/REF/SF2_CT", "Description": "SF2 PROOF", "uuid": "182e1928-83e3-53f1-b8e0-4995af470733", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}, "PointName": "SDH.REF.SF2_CT"}}]

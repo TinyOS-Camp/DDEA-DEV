@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "cfm", "ReadingType": "double"}, "Path": "/Siemens/SDH.PXCM-06/SDH/HW/DP.STP", "Description": "HW DP SETPOINT", "uuid": "902fd3d6-7ab3-54ca-9c74-84657c5f03b4", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}, "PointName": "SDH.HW_DP.STP"}}]

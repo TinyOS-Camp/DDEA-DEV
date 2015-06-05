@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "F", "ReadingType": "double"}, "Path": "/Siemens/SDH.PXCM-01/SDH/AH1/RHC-4:ROOM_TEMP", "uuid": "b1dc160d-cf8a-57c9-b509-183cea59cb83", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}, "PointName": "SDH.AH1_RHC-4:ROOM TEMP"}}]

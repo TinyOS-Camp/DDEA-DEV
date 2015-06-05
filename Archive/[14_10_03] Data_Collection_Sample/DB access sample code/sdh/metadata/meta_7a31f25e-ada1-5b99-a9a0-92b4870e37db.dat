@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "None", "ReadingType": "double"}, "Path": "/WattStopper/WS86009/WS86009", "Description": "LCPM6- Nanolab 5M", "uuid": "7a31f25e-ada1-5b99-a9a0-92b4870e37db", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}, "PointName": "WS86009"}}]

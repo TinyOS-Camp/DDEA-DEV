@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "56", "ReadingType": "double"}, "Path": "/Siemens/SDH.PXCM-03/SDH.CH.CHWST.DP2.RESET", "uuid": "350118a2-8c03-5c38-9316-6da7ce790159", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}}}]

@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "57785136", "ReadingType": "double"}, "Path": "/Siemens/SDH.PXCM-04/SDH.S1-16:HEAT.COOL", "uuid": "69944f47-c911-5100-add9-303aadc14d82", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}}}]

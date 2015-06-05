@@ -1,0 +1,614 @@
+<html>
+<head>
+    <title>Data-Driven Energy Analytics</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Fav Icon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.treeselect.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/plot.css" />
+
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-3">
+            <div class="container-fluid">
+
+                <div class="row">
+                    <h5>POWER NAME KEY (exemplar?)<br/><small>POWER</small></h5>
+                </div>
+
+                <div class="row">
+                    <div id="chosentree"></div>
+                </div>
+
+                <div class="row">
+                    <div class="input-group" style="width:100%;margin:0.5em 0; padding:0;">
+                        <input 
+                            id="start-date"
+                            type="text" 
+                            class="form-control" 
+                            placeholder="Starting Date" 
+                            data-value="2013/01/01">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-group" style="width:100%;margin:0 0 0.5em 0;padding:0;">
+                        <input
+                            id="end-date" 
+                            type="text" 
+                            class="form-control" 
+                            placeholder="Ending Date" 
+                            data-value="2012/01/01">
+                    </div>                        
+                </div>
+
+
+                <div class="row">
+                    <h5> Time Interval</h5>
+                    <div class="dropdown" style="width:100%;margin:0 0 0.5em 0;padding:0;">
+                        <button
+                            id="input-time-interval"
+                            class="btn btn-info dropdown-toggle" 
+                            type="button" 
+                            data-value="900"
+                            data-toggle="dropdown" 
+                            style="width:100%;"
+                            aria-expanded="true">
+                                15 minutes
+                                <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="input-time-interval">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-value="900">15 minutes</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-value="1800">30 minutes</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-value="3600">60 minutes</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <button id="input-submit" type="button" class="btn btn-default" style="width:100%;">
+                        <strong>Start</strong>
+                    </button>
+                </div>
+
+                <div class="row">
+                    <h3><small> Interpolation Params </small></h3>
+                </div>
+
+                <div class="row">
+                    <h3><small> Clustering Params </small></h3>
+                </div>
+
+                <div class="row">
+                    <h3><small> Learning Params </small></h3>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-9">
+
+            <pre id="server_progress" style="height: 24pc; overflow-y: scroll; font-size:1em;"></pre>
+
+
+            <div class="container-fluid">
+                <!--h4 class="row">Sensor Reading <small id="reading-title"></h4>
+                <div class="row">
+                    <svg id="reading-plot" style="width:100%;height:240px;"/>
+                </div-->
+
+                <h4 class="row">Pre-Processed Reading <small id="feature-title"></h4>
+                <div class="row">
+                    <svg id="feature-plot" style="width:100%;height:240px;"/>
+                </div>
+
+                <h4 class="row">Feature Extracted <small>Average</small></h4>
+                <div class="row svg_contailer">
+                    <svg role="feature-avg" class="heatmap" style="width:100%;height:1px;"></svg>
+                </div>
+
+                <h4 class="row"><small>Difference</small></h4>
+                <div class="row svg_contailer">
+                    <svg role="feature-diff" class="heatmap" style="width:100%;height:1px;"></svg>
+                </div>                
+            </div>
+
+
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-md-2">
+                        <h5> BN Graph</h5>
+                        <div class="dropdown">
+                            <button
+                                id="input-bn-graph"
+                                class="btn btn-default dropdown-toggle"
+                                type="button" 
+                                data-value="avg"
+                                data-toggle="dropdown" 
+                                aria-expanded="true">
+                                    Average
+                                    <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="input-time-interval">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-value="diff">Difference</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5">
+                        <h5> Sensor</h5>
+                        <div class="dropdown">
+                            <button
+                                id="input-bn-exemplar"
+                                class="btn btn-default dropdown-toggle"
+                                type="button" 
+                                data-value="avg"
+                                data-toggle="dropdown" 
+                                aria-expanded="true">
+                                    Exemplar(?)
+                                    <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="input-time-interval">
+                                <!--li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-value="diff">Difference</a></li-->
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <h5> Display Type</h5>
+                        <div class="dropdown">
+                            <button
+                                id="input-graph-type"
+                                class="btn btn-default dropdown-toggle"
+                                type="button" 
+                                data-value="avg"
+                                data-toggle="dropdown" 
+                                aria-expanded="true">
+                                    RN for Sensor
+                                    <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="input-time-interval">
+                                <!--li role="presentation"><a role="menuitem" tabindex="-1" href="#" data-value="diff">Difference</a></li-->
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="row">
+                    <svg role="bn-graph" style="width:100%;height:500px;"></svg> 
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+
+    <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js"></script>
+
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
+
+    <script type='text/javascript' src="js/jquery.treeselect.js"></script>
+    <script type='text/javascript' src="js/jquery.chosentree.js"></script>
+
+
+    <script type='text/javascript' src="http://d3js.org/d3.v3.min.js"></script>
+    <script type='text/javascript' src="js/fisheye.js?0.0.3"></script>
+    <script type="text/javascript" src="js/plot.js"></script>
+    <script type="text/javascript">
+
+        var itemnames = [];
+        var avg_value = [];
+
+        $(".dropdown-menu li a").click(function(){
+            $("#input-time-interval").text($(this).text()).data('value', $(this).data('value'));
+        });
+
+
+        $('#start-date').datetimepicker({
+            format: 'YYYY-MM-DD'
+            ,useCurrent: false
+            ,defaultDate: "2012-05-01"
+        });
+
+        $('#end-date').datetimepicker({
+            format: 'YYYY-MM-DD'
+            ,useCurrent: false
+            ,defaultDate: "2012-05-30"
+        });
+
+
+        $("#input-submit").click(function(event){
+            event.preventDefault();
+
+            var selected = {}
+            var sn = $('#chosentree').selectedNodes();
+            var size = 0;
+            
+            for (var key in sn) {
+                val = sn[key]
+                selected[key] = val.meta.Path;
+                size++;
+            }
+
+        
+            if (size <= 0){
+                console.log("NULL array");
+                //return;
+            }
+
+            //$(this).prop('disabled', true);
+
+            var starter = {
+                "start-date":$("#start-date").data('date')
+                ,"end-date":$("#end-date").data('date')
+                ,"selected-nodes":selected
+                ,"time-interval":$("#input-time-interval").data('value')
+            }
+
+
+            var json = JSON.stringify(starter);
+            console.log(json);
+
+            var jqxhr = $.post( "cmd/ddea-start"
+                        ,json 
+                        ,function(data) {
+                            console.log( "success" + data);
+                        }).done(function(data) {
+                            console.log( "second success" + data);
+                        }).fail(function(err) {
+                            console.log( "fail" + err);
+                        }).always(function(status) {
+                            //console.log( "finished" );
+                        });
+        });
+
+        function log(m) {
+            ellog.innerHTML += m + '\n';
+            ellog.scrollTop = ellog.scrollHeight;
+        };
+
+
+
+        window.onload = function() {
+            var wsuri;
+            ellog = document.getElementById('server_progress');
+            if (window.location.protocol === "file:") {
+                wsuri = "ws://192.168.0.125:8081";
+            } else {
+                wsuri = "ws://" + window.location.hostname + ":8081";
+            }
+
+            if ("WebSocket" in window) {
+                sock = new WebSocket(wsuri);
+            } else if ("MozWebSocket" in window) {
+                sock = new MozWebSocket(wsuri);
+            } else {
+                log("Browser does not support WebSocket!");
+                window.location = "http://autobahn.ws/unsupportedbrowser";
+            }
+
+            if (sock) {
+                sock.onopen = function() {
+                    log("Connected to " + wsuri);
+                }
+
+                sock.onclose = function(e) {
+                    log("Connection closed (wasClean = " + e.wasClean + ", code = " + e.code + ", reason = '" + e.reason + "')");
+                    sock = null;
+                    $('#date-input-submit').prop('disabled', false);
+                }
+
+                sock.onmessage = function(e) {
+                    log(e.data);
+
+                    if( 0 < e.data.indexOf("End of Program")){
+                        $('#date-input-submit').prop('disabled', false);
+                        loadGallery();
+                    }
+                }
+            }
+        }
+
+
+        if (true)
+        {
+            var loadMetaTree = function(node, list, level) {
+                for (var i = 0; i < list.length; i++) {
+
+                    var dict        = list[i];
+                    var key         = Object.keys(dict)[0];
+                    var value       = dict[key];
+
+                    //var hasChildren = (dict.hasOwnProperty('uuid') != true);
+                    var hasChildren = ( Object.prototype.toString.call(value) === '[object Array]');
+
+                    var id          = hasChildren ? key : value['uuid'];
+                    var title       = hasChildren ? key : value['Title'];
+                    var meta        = hasChildren ? null : value;
+
+        /*
+                    //if (typeof value.length === 'undefined'){
+                    if( hasChildren ){
+                        console.log("Has children : <" + title + "> : [" + value.length + "]")
+                    }else{
+                        //console.log("Terminal Node : " + JSON.stringify(dict))
+                        console.log("Terminal     : <" + key+ "> : [" + id + "]")
+                    }
+        */
+                    node.children.push({
+                        id: id,
+                        title:title,
+                        meta:meta,
+                        has_children:hasChildren,
+                        level: node.level + 1,
+                        children:[]
+                    });
+
+
+                    if (hasChildren) {
+                        loadMetaTree(node.children[i], value, (level+1));
+                    }
+                }
+
+                return node;
+            };
+
+
+            $.getJSON( "meta/meta.json", function( data ) {
+                jQuery(function() {
+                    $('#chosentree').chosentree({
+                        width: 100
+                        ,deepLoad: true
+                        ,showtree: true
+                        ,input_placeholder: null
+                        ,input_type: 'text'
+                        ,load: function(node, callback) {
+                            setTimeout(function() {
+                                callback(loadMetaTree(node, data, 0));
+                            }, 1000);
+                        }
+                        ,nodeclicked: function (node){
+
+                            console.log(node);
+
+				            $.getJSON( "json/preproc-" + node.id + ".json", function( feature_list ) {
+
+				              	
+								var data = feature_list.map(function(f) {
+								    return {
+								        ts: new Date(f[0]*1000)
+								        ,avg: f[1]
+								        ,diff: f[2]
+								    }
+								});
+
+								
+                                drawFeature("#feature-title", "#feature-plot", node.title, data);
+								
+							});
+
+                            
+/*
+                            $.getJSON( "json/reading-" + node.id + ".json", function( reading_list ) {
+
+                                var data = reading_list.map(function(f) {
+                                    return {
+                                        ts: new Date(f[0]*1000)
+                                        ,reading: f[1]
+                                    }
+                                });
+
+                                
+                                drawReading("#reading-title", "#reading-plot", node.title, data);
+
+
+                                }
+                            );
+*/
+
+                        }
+                    });
+                });
+            });
+
+        }
+        else
+        {
+
+
+            $.getJSON( "json/feature.json", function( data ) {
+
+              $.each( data, function( key, val ) {
+
+
+                switch(key)
+                {
+                    case "avg_name":{
+
+                        // assign value
+                        itemnames = val;
+
+                        jQuery(function() {
+
+                            var loadChildren = function(node, level, list) {
+
+                                for (var i=0; i < list.length; i++) {
+                                  var id = list[i];
+                                  node.children.push({
+                                    id:id,
+                                    title:id,
+                                    has_children:false,
+                                    level: node.level + 1,
+                                    children:[]
+                                  });
+                                }
+
+                                return node;
+                            };
+
+
+                            $('#chosentree').chosentree({
+                                width: 100
+                                ,deepLoad: true
+                                ,showtree: true
+                                ,input_placeholder: null
+                                ,input_type: 'text'
+                                ,load: function(node, callback) {
+                                    setTimeout(function() {
+                                        callback(loadChildren(node, 0, val));
+                                    }, 1000);
+                                }
+                                ,nodeclicked: function (node){
+
+                                    var index = itemnames.indexOf(node.id);
+                                    var data = avg_value.map(function(v) {
+                                        return {
+                                            ts: new Date(v[0]*1000)
+                                            ,avg: v[1][index]
+                                        };
+                                    });
+
+                                    drawFeature("#feature-title", "#feature-plot", node.title, data);
+
+                                }
+                            });
+                        });
+                        break;
+                    }
+
+                    case "avg":{
+                        avg_value = val;
+                        break;
+                    }
+                }
+
+              });
+            });
+
+        }
+
+
+
+
+		(function chart1() {
+
+            var svg = d3.select('[role="bn-graph"]');
+            var dimen = svg.node().getBoundingClientRect();
+
+            var width = dimen["width"];
+            var height = dimen["height"];
+
+            var color = d3.scale.category20();
+
+            var fisheye = d3.fisheye.circular()
+                .radius(120);
+
+            var force = d3.layout.force()
+                        .charge(-240)
+                        .linkDistance(40)
+                        .size([width, height]);
+
+
+            svg
+                .append("rect")
+                .attr("width", "100%")
+                .attr("height", "100%")
+                .attr("fill", '#fff');;
+
+
+		  d3.json("json/soda_bn_graph.json", function(data) {
+            var n = data.nodes.length;
+
+            var nodes = data.nodes;
+            var links = data.links.diff[0].link_group.links;
+
+            $("#input-bn-exemplar").text( data.links.diff[0].sensor );
+
+            force.nodes(nodes).links(links);
+
+		    // Initialize the positions deterministically, for better results.
+		    nodes.forEach(function(d, i) { d.x = d.y = width / n * i; });
+
+		    // Run the layout a fixed number of times.
+		    // The ideal number of times scales with graph complexity.
+		    // Of course, don't run too long—you'll hang the page!
+		    force.start();
+		    for (var i = n; i > 0; --i) force.tick();
+		    force.stop();
+
+		    // Center the nodes in the middle.
+		    var ox = 0, oy = 0;
+		    nodes.forEach(function(d) { ox += d.x, oy += d.y; });
+		    ox = ox / n - width / 2, oy = oy / n - height / 2;
+		    nodes.forEach(function(d) { d.x -= ox, d.y -= oy; });
+
+		    var link = svg.selectAll(".link")
+        		        .data(links)
+        		        .enter().append("line")
+        		        .attr("class", "link")
+        		        .attr("x1", function(d) { return d.source.x; })
+        		        .attr("y1", function(d) { return d.source.y; })
+        		        .attr("x2", function(d) { return d.target.x; })
+        		        .attr("y2", function(d) { return d.target.y; })
+        		        .style("stroke-width", function(d) { return Math.sqrt(d.value); });
+
+		    var node = svg.selectAll(".node")
+                        .data(nodes)
+                        .enter()
+                        .append("circle")
+                        .attr("class", "node")
+                        .attr("cx", function(d) { return d.x; })
+                        .attr("cy", function(d) { return d.y; })
+                        .attr("r", 6.5)
+                        .style("fill", function(d) { return color(d.group); })
+                        .call(force.drag);
+
+		    svg.on("mousemove", function() {
+		      fisheye.focus(d3.mouse(this));
+
+		      node.each(function(d) { d.fisheye = fisheye(d); })
+		          .attr("cx", function(d) { return d.fisheye.x; })
+		          .attr("cy", function(d) { return d.fisheye.y; })
+		          .attr("r", function(d) { return d.fisheye.z * 4.5; });
+
+		      link.attr("x1", function(d) { return d.source.fisheye.x; })
+		          .attr("y1", function(d) { return d.source.fisheye.y; })
+		          .attr("x2", function(d) { return d.target.fisheye.x; })
+		          .attr("y2", function(d) { return d.target.fisheye.y; });
+		    });
+		  });
+		})();
+
+
+    heatmap('json/soda_sensor_feature_avg.json', 'feature-avg', ['#f03b20', '#feb24c', '#ffeda0']);
+    heatmap('json/soda_sensor_feature_diff.json', 'feature-diff', ['#3182bd', '#9ecae1','#deebf7']);
+
+	</script>
+
+</body>
+</html>

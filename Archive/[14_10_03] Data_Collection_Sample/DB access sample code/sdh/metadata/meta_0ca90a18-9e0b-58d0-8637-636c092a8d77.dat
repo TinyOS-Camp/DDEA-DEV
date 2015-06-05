@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "cfm", "ReadingType": "double"}, "Path": "/Siemens/SDH.PXCM-08/SDH/AH2B/RAD", "Description": "RET AIR DAMPER", "uuid": "0ca90a18-9e0b-58d0-8637-636c092a8d77", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}, "PointName": "SDH.AH2B_RAD"}}]

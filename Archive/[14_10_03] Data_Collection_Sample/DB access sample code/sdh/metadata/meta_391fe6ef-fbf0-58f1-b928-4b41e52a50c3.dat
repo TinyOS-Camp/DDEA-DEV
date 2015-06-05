@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "F", "ReadingType": "double"}, "Path": "/Siemens/SDH.PXCM-03/SDH/CW/CWST2", "Description": "CW SUP TEMP 2", "uuid": "391fe6ef-fbf0-58f1-b928-4b41e52a50c3", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}, "PointName": "SDH.CW_CWST2"}}]

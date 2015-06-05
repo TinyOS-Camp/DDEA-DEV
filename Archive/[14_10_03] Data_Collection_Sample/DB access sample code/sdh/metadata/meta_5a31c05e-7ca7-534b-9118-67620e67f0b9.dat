@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "", "ReadingType": "double"}, "Path": "/WattStopper/BTU METER 57017/Zero_Aux_Input_Total", "uuid": "5a31c05e-7ca7-534b-9118-67620e67f0b9", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}, "PointName": "Zero Aux Input Total"}}]

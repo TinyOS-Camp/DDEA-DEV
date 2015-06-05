@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "None", "ReadingType": "double"}, "Path": "/WattStopper/WS86999/GROUP46", "Description": "RP5:HPSA-EAST", "uuid": "683378b8-2c32-5b5b-8359-59d77b4e0dec", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}, "PointName": "GROUP46"}}]

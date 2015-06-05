@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "None", "ReadingType": "double"}, "Path": "/WattStopper/WS86002/RELAY09", "Description": "SUB-FAB MECHANICAL SPACE 280", "uuid": "3c46755f-7236-5fd5-aa46-4e932e4231b6", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}, "PointName": "RELAY09"}}]

@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "cfm", "ReadingType": "double"}, "Path": "/Siemens/SDH.PXCM-06/SDH/DEM/EOMD42A:POWER_FACTOR", "uuid": "3b659d59-0cfe-5d43-a8aa-fd8936e01ae7", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}, "PointName": "SDH.DEM.EOMD42A:POWER FACTOR"}}]

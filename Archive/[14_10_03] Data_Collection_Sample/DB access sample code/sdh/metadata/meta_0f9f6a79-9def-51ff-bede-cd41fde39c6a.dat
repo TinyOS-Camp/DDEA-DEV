@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "98", "ReadingType": "double"}, "Path": "/Siemens/SDH.PXCM-10/SDH/RAH07/CCV", "Description": "COOLING COIL VLV", "uuid": "0f9f6a79-9def-51ff-bede-cd41fde39c6a", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}, "PointName": "SDH.RAH07_CCV"}}]

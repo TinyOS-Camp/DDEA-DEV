@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "cfm", "ReadingType": "double"}, "Path": "/Siemens/SDH.PXCM-08/SDH/AH2B/EAD", "Description": "EXH AIR DAMPER", "uuid": "4435ba57-b2b9-5715-8bc7-a5133f5203c4", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}, "PointName": "SDH.AH2B_EAD"}}]

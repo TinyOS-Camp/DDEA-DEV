@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "F", "ReadingType": "double"}, "Path": "/Siemens/SDH.PXCM-03/SDH/CH2/LCHWT", "Description": "LEAVING CHWT", "uuid": "1f4b2393-cec9-530e-9a3d-22a08c8d281a", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}, "PointName": "SDH.CH2.LCHWT"}}]

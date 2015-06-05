@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "F", "ReadingType": "double"}, "Path": "/Siemens/SDH.PXCM-10/SDH/RAH10/SAT", "Description": "SUPPLY AIR TEMP", "uuid": "cf22bfd0-b754-5a8b-a4d1-7639e93e549c", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}, "PointName": "SDH.RAH10_SAT"}}]

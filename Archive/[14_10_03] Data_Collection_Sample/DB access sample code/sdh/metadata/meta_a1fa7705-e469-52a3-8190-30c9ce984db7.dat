@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "", "ReadingType": "double"}, "Path": "/WattStopper/WS86001/RELAY01", "Description": "CORE AREAS", "uuid": "a1fa7705-e469-52a3-8190-30c9ce984db7", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}, "PointName": "RELAY01"}}]

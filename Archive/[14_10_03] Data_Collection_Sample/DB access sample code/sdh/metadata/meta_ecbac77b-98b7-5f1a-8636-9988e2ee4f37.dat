@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "F", "ReadingType": "double"}, "Path": "/Siemens/SDH.PXCM-04/SDH/CHW2/CWST", "Description": "CW SUPPLY TEMP", "uuid": "ecbac77b-98b7-5f1a-8636-9988e2ee4f37", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}, "PointName": "SDH.CHW2_CWST"}}]

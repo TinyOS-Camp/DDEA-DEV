@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "", "ReadingType": "double"}, "Path": "/WattStopper/BTU METER 57017/Zero_Mode_1_Energy_Total", "uuid": "d0c5b0c4-634f-5468-872a-181cb0959fe4", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}, "PointName": "Zero Mode 1 Energy Total"}}]

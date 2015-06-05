@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "103785200", "ReadingType": "double"}, "Path": "/Siemens/SDH.PXCM-11/SDH/REF/EX1_CT", "Description": "EX1 PROOF", "uuid": "5d7fc2e6-567c-51e9-b4fd-e19591b82dac", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}, "PointName": "SDH.REF.EX1_CT"}}]

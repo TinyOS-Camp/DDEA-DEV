@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "102078984", "ReadingType": "double"}, "Path": "/Siemens/SDH.PXCM-03/SDH.CW.CT2_VIBRATION.SW", "uuid": "189f9e21-c2cb-54b3-9654-f778cc8a4b35", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}}}]

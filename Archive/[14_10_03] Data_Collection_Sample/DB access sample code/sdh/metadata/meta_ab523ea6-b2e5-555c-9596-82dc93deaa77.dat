@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "F", "ReadingType": "double"}, "Path": "/Siemens/SDH.PXCM-06/SDH/HW/HWRT", "Description": "HW RETURN TEMP", "uuid": "ab523ea6-b2e5-555c-9596-82dc93deaa77", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}, "PointName": "SDH.HW_HWRT"}}]

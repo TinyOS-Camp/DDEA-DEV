@@ -1,0 +1,277 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+
+	<meta name="author" content="DDEA">
+	<meta name="viewport" content="width=device-width">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+	<title>DDEA on SDH</title>
+
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" id="theme_time">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/default.css" id="theme_base">
+	<link rel="stylesheet" href="css/default.date.css" id="theme_date">
+	<link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+	<link rel="stylesheet" href="css/bootstrap-image-gallery.min.css">
+	<link rel="stylesheet" href="css/demo.css">
+
+	<!--[if lt IE 9]>
+	    <script>document.createElement('section')</script>
+	<![endif]-->
+
+
+	<style>
+	svg {
+		font: 10px sans-serif;
+		fill: none;
+		pointer-events: all;
+	}
+	
+	#chart1 .link {
+		stroke: #999;
+		stroke-opacity: .6;
+		stroke-width: 1.5px;
+	}
+	</style>
+
+</head>
+
+<body>
+    <header class="section section--header section--splash">
+    </header>
+
+
+	<section class="section">
+
+	    <div class="section__block section__block--scoped">
+
+	        <h2 class="heading heading--one heading--divide heading--divide-first">
+	        	<span class="heading__text">DDEA on SDH</span>
+	    	</h2>
+
+	    	<form id="date-input" name="date-input" method="post" >
+
+		        <fieldset class="fieldset fieldset--demo">
+		        	<div id="keyword" class="fieldset__wrapper">
+		        		<input class="fieldset__input" type="text" placeholder="Sensor Keyword" name="keyword" for="keyword" value="CURRENT">
+	        		</div>
+	    		</fieldset>
+
+		        <fieldset class="fieldset fieldset--demo">
+		        	<div id="time_inv" class="fieldset__wrapper">
+		        		<input class="fieldset__input" type="text" placeholder="Time Interval" name="time_inv" for="time_inv" value="60">
+	        		</div>
+	    		</fieldset>
+
+		        <fieldset class="fieldset fieldset--demo">
+		        	<div id="start_date" class="fieldset__wrapper">
+		        		<input class="fieldset__input js__datepicker" type="text" placeholder="Starting Date" name="start_date" for="start_date" data-value="2014/01/01">
+	        		</div>
+	    		</fieldset>
+
+		        <fieldset class="fieldset fieldset--demo">
+		        	<div id="end_date" class="fieldset__wrapper">
+		        		<input class="fieldset__input js__datepicker" type="text" placeholder="End Date" name="end_date" for="end_date" data-value="2014/02/01">
+	        		</div>
+	    		</fieldset>
+
+				<button id="date-input-submit" type="submit" class="btn btn-default btn-lg" for="date-input"><strong>Start</strong></button>
+			</form>
+
+	    </div>
+
+	</section>
+
+	<hr/>
+
+	<section class="section">
+
+	    <div class="section__block section__block--scoped">
+
+	        <h2 class="heading heading--one heading--divide heading--divide-first">
+	        	<span class="heading__text">Progress Console</span>
+	    	</h2>
+
+	        <pre id="server_progress" style="height: 24pc; overflow-y: scroll; font-size:0.6em;"></pre>
+
+	    </div>
+
+	</section>
+
+
+	<hr/>
+	<!--section class="section">
+		
+	    <div class="section__block section__block--scoped">
+
+	        <h2 class="heading heading--one heading--divide heading--divide-first">
+	        	<span class="heading__text">BN Topology</span>
+	    	</h2>
+
+	        <p id="chart1"></p>
+
+	    </div>
+
+	</section-->
+
+	<section class="section">
+	    <div class="section__block section__block--scoped">
+
+	        <h2 class="heading heading--one heading--divide heading--divide-first">
+	        	<span class="heading__text">BN Analysis Output</span>
+	    	</h2>
+
+	    	<div id="bn-links"></div>
+	    </div>
+    </section>
+
+	<section class="section">
+	    <br>
+
+    	    <div class="section__block section__block--scoped">
+
+	        <h2 class="heading heading--one heading--divide heading--divide-first">
+	        	<span class="heading__text">LH Analysis Output</span>
+	    	</h2>
+
+	    	<div id="lh-links"></div>
+	    </div>
+    </section>
+
+	<div id="blueimp-gallery" class="blueimp-gallery">
+	    <!-- The container for the modal slides -->
+	    <div class="slides"></div>
+	    <!-- Controls for the borderless lightbox -->
+	    <h3 class="title"></h3>
+	    <a class="prev">‹</a>
+	    <a class="next">›</a>
+	    <a class="close">×</a>
+	    <a class="play-pause"></a>
+	    <ol class="indicator"></ol>
+	    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+	    <div class="modal fade">
+	        <div class="modal-dialog">
+	            <div class="modal-content">
+	                <div class="modal-header">
+	                    <button type="button" class="close" aria-hidden="true">&times;</button>
+	                    <h4 class="modal-title"></h4>
+	                </div>
+	                <div class="modal-body next"></div>
+	                <div class="modal-footer">
+	                    <button type="button" class="btn btn-default pull-left prev">
+	                        <i class="glyphicon glyphicon-chevron-left"></i>
+	                        Previous
+	                    </button>
+	                    <button type="button" class="btn btn-primary next">
+	                        Next
+	                        <i class="glyphicon glyphicon-chevron-right"></i>
+	                    </button>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+
+    <footer class="section section--footer">
+    </footer> 
+
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script>window.jQuery||document.write('<script src="tests/jquery.2.0.0.js"><\/script>')</script>
+    <script src="js/picker.js"></script>
+    <script src="js/picker.date.js"></script>
+    <script src="js/picker.time.js"></script>
+    <script src="js/legacy.js"></script>
+    <script src="js/jquery.form.min.js"></script>
+	<script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+	<script src="js/bootstrap-image-gallery.min.js"></script>
+
+    <!--script src="http://d3js.org/d3.v2.min.js?2.9.4"></script>
+    <script src="js/fisheye.js?0.0.3"></script-->
+    <script src="js/main.js"></script>
+    <!--script>
+		(function chart1() {
+		  var width = 960,
+		      height = 500;
+
+		  var color = d3.scale.category20();
+
+		  var fisheye = d3.fisheye.circular()
+		      .radius(120);
+
+		  var force = d3.layout.force()
+		      .charge(-240)
+		      .linkDistance(40)
+		      .size([width, height]);
+
+		  var svg = d3.select("#chart1").append("svg")
+		      .attr("width", width)
+		      .attr("height", height);
+
+		  svg.append("rect")
+		      .attr("class", "background")
+		      .attr("width", width)
+		      .attr("height", height);
+
+		  d3.json("data/miserables.json", function(data) {
+		    var n = data.nodes.length;
+
+		    force.nodes(data.nodes).links(data.links);
+
+		    // Initialize the positions deterministically, for better results.
+		    data.nodes.forEach(function(d, i) { d.x = d.y = width / n * i; });
+
+		    // Run the layout a fixed number of times.
+		    // The ideal number of times scales with graph complexity.
+		    // Of course, don't run too long—you'll hang the page!
+		    force.start();
+		    for (var i = n; i > 0; --i) force.tick();
+		    force.stop();
+
+		    // Center the nodes in the middle.
+		    var ox = 0, oy = 0;
+		    data.nodes.forEach(function(d) { ox += d.x, oy += d.y; });
+		    ox = ox / n - width / 2, oy = oy / n - height / 2;
+		    data.nodes.forEach(function(d) { d.x -= ox, d.y -= oy; });
+
+		    var link = svg.selectAll(".link")
+		        .data(data.links)
+		      .enter().append("line")
+		        .attr("class", "link")
+		        .attr("x1", function(d) { return d.source.x; })
+		        .attr("y1", function(d) { return d.source.y; })
+		        .attr("x2", function(d) { return d.target.x; })
+		        .attr("y2", function(d) { return d.target.y; })
+		        .style("stroke-width", function(d) { return Math.sqrt(d.value); });
+
+		    var node = svg.selectAll(".node")
+		        .data(data.nodes)
+		      .enter().append("circle")
+		        .attr("class", "node")
+		        .attr("cx", function(d) { return d.x; })
+		        .attr("cy", function(d) { return d.y; })
+		        .attr("r", 4.5)
+		        .style("fill", function(d) { return color(d.group); })
+		        .call(force.drag);
+
+		    svg.on("mousemove", function() {
+		      fisheye.focus(d3.mouse(this));
+
+		      node.each(function(d) { d.fisheye = fisheye(d); })
+		          .attr("cx", function(d) { return d.fisheye.x; })
+		          .attr("cy", function(d) { return d.fisheye.y; })
+		          .attr("r", function(d) { return d.fisheye.z * 4.5; });
+
+		      link.attr("x1", function(d) { return d.source.fisheye.x; })
+		          .attr("y1", function(d) { return d.source.fisheye.y; })
+		          .attr("x2", function(d) { return d.target.fisheye.x; })
+		          .attr("y2", function(d) { return d.target.fisheye.y; });
+		    });
+		  });
+		})();
+	</script-->
+</body>

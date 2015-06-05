@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "kW", "ReadingType": "double"}, "Path": "/Siemens/SDH.PXCM-11/SDH/ELA/KW", "Description": "ELA KW", "uuid": "70e0bbab-1201-5c67-81a5-715065a84eb6", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}, "PointName": "SDH.ELA_KW"}}]

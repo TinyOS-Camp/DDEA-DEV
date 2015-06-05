@@ -1,0 +1,13 @@
+How to work?
+	sMAP metadata parsing code.
+	save to Excel file (xlsx)
+	choose 3 kind of method
+
+
+Requirement
+	1) openpyxl
+	2) pycurl
+
+How to install library
+	1) easy_install openpyxl
+	2) pip install pycurl

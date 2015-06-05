@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "F", "ReadingType": "double"}, "Path": "/Siemens/SDH.PXCM-08/SDH/AH2B/SAT.STP", "Description": "SAT SETPOINT", "uuid": "eb36ea17-cddb-573b-916d-9aed3e8cae97", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}, "PointName": "SDH.AH2B_SAT.STP"}}]

@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "None", "ReadingType": "double"}, "Path": "/WattStopper/BTU METER 57017/Mode_1_Mode_2_indication", "uuid": "b04efcad-7394-583e-bf51-020647dcccf0", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}, "PointName": "Mode 1 Mode 2 indication"}}]

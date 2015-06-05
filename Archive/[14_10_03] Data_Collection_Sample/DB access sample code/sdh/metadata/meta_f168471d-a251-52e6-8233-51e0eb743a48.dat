@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "56", "ReadingType": "double"}, "Path": "/Siemens/SDH.PXCM-03/SDH/CHW1/CHW.DP", "Description": "CHW DIFF PRESS", "uuid": "f168471d-a251-52e6-8233-51e0eb743a48", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}, "PointName": "SDH.CHW1_CHW.DP"}}]

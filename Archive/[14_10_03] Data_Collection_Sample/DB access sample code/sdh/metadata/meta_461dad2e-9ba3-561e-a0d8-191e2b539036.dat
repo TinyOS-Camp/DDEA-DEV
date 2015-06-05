@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "83", "ReadingType": "double"}, "Path": "/Siemens/SDH.PXCM-11/SDH.CITY.WATER_FLOW", "uuid": "461dad2e-9ba3-561e-a0d8-191e2b539036", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}}}]

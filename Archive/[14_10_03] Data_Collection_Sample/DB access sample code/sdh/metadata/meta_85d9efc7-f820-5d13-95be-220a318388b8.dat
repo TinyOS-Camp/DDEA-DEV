@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "103808816", "ReadingType": "double"}, "Path": "/Siemens/SDH.PXCM-10/SDH.EF3.EF4_FAILURE.RESET", "uuid": "85d9efc7-f820-5d13-95be-220a318388b8", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}}}]

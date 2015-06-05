@@ -1,0 +1,41 @@
+1. parellel parts
+- update codes for this options. 
+- make code clean with proper comments
+
+2. Individual dictionary parts 
+ - store all files in parent directory. 
+ - update codes for this options using shared constant flag
+ - make code clean with proper comments
+ - construct_data_dict_2   --> make it optional 
+
+3. Shell script to execute python program
+ - store log as txt file
+ - user friendlty interface for defining execution options. 
+
+4. Readme.txt files 
+ - tutorial on how to execute program e.g. a basic tutorial for beginner of the program such as a sample toy program using shell script. .. run this first. etc.
+ - folders and subfolders descriptions.  
+
+5. files of interest for code updates of 1 and 2. 
+  - data retrieval 
+	--  get_val_timelet
+	--  construct_data_dict
+  - data_preprocess
+	-- verify_data_mat (check again) 
+
+  -pre_bn_state_processing 
+	-- compute_log_ll added by deokwoo (used for state_retrieval)
+ 	-- state_retrieval
+
+
+6. Proper comments and authorship of codes.  copyright etc. 
+   - Find the best formatting for python for this. 
+
+7. Update it in Bitbucket once complete the programming formatting
+
+8. Binary executable files for python. 
+   - Final deliverble : shell script + binary complied source codes  + data bin files for test in hard-disk drive they shipped us. 
+----------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------
+ 
+

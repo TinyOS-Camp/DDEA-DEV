@@ -1,0 +1,1 @@
+[{"Properties": {"Timezone": "America/Los_Angeles", "UnitofMeasure": "None", "ReadingType": "double"}, "Path": "/Siemens/SDH.PXCC-07/SDH/AH3/CCV", "Description": "COOLING VALVE", "uuid": "d264fee8-fe59-5e48-b374-043527a645a9", "Metadata": {"SourceName": "Sutardja Dai Hall BACnet", "Location": {"Building": "Sutardja Dai Hall", "Campus": "UCB"}, "PointName": "SDH.AH3_CCV"}}]
